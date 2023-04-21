@@ -14,10 +14,14 @@
 This project demonstrates how Expo Prebuild could be leveraged to run on out-of-tree platforms, with fully customizable templates.
 It's set-up to use prebuild for `android`, `ios`, and `macos`, using the custom template from this repository.
 
+> **Warning**
+> We recently merged [PR #22224](https://github.com/expo/expo/pull/22224) and [PR #22201](https://github.com/expo/expo/pull/22201), which is required for this demonstration.
+> Because these pull requests aren't released yet, this repository contains a modified `@expo/cli` and `@expo/config-plugin` versions. (see [./vendored](./vendored))
+
 ## 📁 Project Structure
 
 - [`app`](./app) - Example app, created using `npx react-native init`
-- [`app/plugins/macos`](./app/plugins/macos) - Registers the `macos` platform with a single modifier
+- [`app/plugins/macos`](./app/plugins/macos) - Registers the `macos` platform with a single modifier and plugin
 - [`template`](./template) - A customized prebuild template
 
 ## 🚀 How to use it

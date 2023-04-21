@@ -1135,17 +1135,17 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@expo/cli@0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.7.0.tgz#2a16873ced05c1f3b7f3990d7b410e9853600f45"
-  integrity sha512-9gjr3pRgwWzUDW/P7B4tA0QevKb+hCrvTmVc3Ce5w7CjdM3zNoBcro8vwviRHqkiB1IifG7zQh0PPStSbK+FRQ==
+"@expo/cli@0.7.0", "@expo/cli@file:../vendored/expo-cli-ed94abb.tgz":
+  version "0.6.1"
+  resolved "file:../vendored/expo-cli-ed94abb.tgz#9f6d7bcc20aa1194e5c7f51bb0a67502901dabf6"
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/code-signing-certificates" "0.0.5"
     "@expo/config" "~8.0.0"
     "@expo/config-plugins" "~6.0.0"
-    "@expo/dev-server" "0.3.0"
+    "@expo/dev-server" "0.2.2"
     "@expo/devcert" "^1.0.0"
+    "@expo/env" "~0.0.2"
     "@expo/json-file" "^8.2.37"
     "@expo/metro-config" "~0.7.0"
     "@expo/osascript" "^2.0.31"
@@ -1188,6 +1188,7 @@
     progress "2.0.3"
     prompts "^2.3.2"
     qrcode-terminal "0.11.0"
+    require-from-string "^2.0.2"
     requireg "^0.2.2"
     resolve-from "^5.0.0"
     semver "^6.3.0"
@@ -1210,10 +1211,9 @@
     node-forge "^1.2.1"
     nullthrows "^1.1.1"
 
-"@expo/config-plugins@6.0.1", "@expo/config-plugins@~6.0.0":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-6.0.1.tgz#827cb34c51f725d8825b0768df6550c1cf81d457"
-  integrity sha512-6mqZutxeibXFeqFfoZApFUEH2n1RxGXYMHCdJrDj4eXDBBFZ3aJ0XBoroZcHHHvfRieEsf54vNyJoWp7JZGj8g==
+"@expo/config-plugins@6.0.1", "@expo/config-plugins@file:../vendored/expo-config-plugins-ed94abb.tgz", "@expo/config-plugins@~6.0.0":
+  version "6.0.0"
+  resolved "file:../vendored/expo-config-plugins-ed94abb.tgz#67bbfa30b309540ee703dd8fa93a3a411062471c"
   dependencies:
     "@expo/config-types" "^48.0.0"
     "@expo/json-file" "~8.2.37"
@@ -1253,10 +1253,10 @@
     slugify "^1.3.4"
     sucrase "^3.20.0"
 
-"@expo/dev-server@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@expo/dev-server/-/dev-server-0.3.0.tgz#c575c88b0ec28f127f328a80ea6a3a4c6f785800"
-  integrity sha512-2A6/8uZADSKAtzyR6YqhCBUFxb5DFmjxmFn0EHMqnPnsh13ZSiKEjrZPrRkM6Li2EHLYqHK2rmweJ7O/7q9pPQ==
+"@expo/dev-server@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo/dev-server/-/dev-server-0.2.2.tgz#203db1ffed32f096749ab491b2c50bd4e242a22a"
+  integrity sha512-JcBI3peg2YA2hmnbAB+2rwODNC/6ca3k5gUbFLf2/NM0nkT14AvrKYhWCXrZsmKWxdLjNvL3X/vrgUCZS+LIfg==
   dependencies:
     "@expo/bunyan" "4.0.0"
     "@expo/metro-config" "~0.7.0"
@@ -1293,6 +1293,16 @@
     sudo-prompt "^8.2.0"
     tmp "^0.0.33"
     tslib "^2.4.0"
+
+"@expo/env@~0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@expo/env/-/env-0.0.2.tgz#350ede88398bb8904ce000bd0570938cace78521"
+  integrity sha512-yaBa6HuG8cRZ6e8R29NMU6Qtl7akbnV5j3nnDg5ELpAWri69Yh1kq2bVfDrqoNfTVKlOV/jW7vTVn1T3GWWJ1w==
+  dependencies:
+    chalk "^4.0.0"
+    debug "^4.3.4"
+    dotenv "~16.0.3"
+    dotenv-expand "~10.0.0"
 
 "@expo/image-utils@0.3.22":
   version "0.3.22"
@@ -3515,6 +3525,16 @@ domexception@^2.0.1:
   integrity sha512-yxJ2mFy/sibVQlu5qHjOkf9J3K6zgmCxgJ94u2EdvDOV09H+32LtRswEcUsmUWN72pVLOEnTSRaIVVzVQgS0dg==
   dependencies:
     webidl-conversions "^5.0.0"
+
+dotenv-expand@~10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-10.0.0.tgz#12605d00fb0af6d0a592e6558585784032e4ef37"
+  integrity sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A==
+
+dotenv@~16.0.3:
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
 ee-first@1.1.1:
   version "1.1.1"

@@ -4,7 +4,10 @@ const fs = require('fs');
 
 const {getLanguage, getViewControllerPath} = require('./utils');
 
-/** This adds a core base mod to prebuild, should be last config plugin */
+/**
+ * This adds a core base mod to prebuild, should be last config plugin.
+ * @see https://docs.expo.dev/config-plugins/development-and-debugging/#custom-base-modifiers
+ */
 module.exports = function withViewControllerBaseMod(config) {
   return BaseMods.withGeneratedBaseMods(config, {
     platform: 'macos',
@@ -28,7 +31,7 @@ module.exports = function withViewControllerBaseMod(config) {
   });
 };
 
-/** Modify the macos/.../withViewController.m file */
+/** Modify the macos/.../ViewController.m file */
 module.exports.withViewController = function withViewController(
   config,
   action,

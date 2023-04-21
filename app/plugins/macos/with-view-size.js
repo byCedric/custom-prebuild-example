@@ -3,7 +3,10 @@ const {withViewController} = require('./base');
 
 const INSERT_PATTERN = 'NSView *view = [self view];';
 
-/** @type {import('@expo/config-plugins').ConfigPlugin} */
+/**
+ * This plugin adds `[view setFrameSize:...]` that should set the initial screen size of a macos app.
+ * @type {import('@expo/config-plugins').ConfigPlugin}
+ */
 function withViewSize(c, {width = 800, height = 600} = {}) {
   return withViewController(c, config => {
     if (config.modResults.language !== 'objc') {
