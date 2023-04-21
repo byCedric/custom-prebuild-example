@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Customized Prebuild Example</h1>
-  <p>Demonstration of out-of-tree platforms with prebuild and config plugins</p>
+  <p>Demonstration of out-of-tree platforms with <a href="https://docs.expo.dev/workflow/prebuild/">prebuild</a> and <a href="https://docs.expo.dev/config-plugins/introduction/">config plugins</a></p>
   <p>
     <a href="https://github.com/byCedric/custom-prebuild-example#-project-structure"><b>Structure</b></a>
     &ensp;&mdash;&ensp;
