@@ -40,7 +40,7 @@ Use `... prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 - `$ cd ./app` - Go to the app folder
 - `$ bundle install` - Install all gems
 - `$ yarn install` - Install all modules, including prebuild
-- `$ expo prebuild --platform macos --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
+- `$ npx expo prebuild --platform macos --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
 - `$ npx pod-install macos` - Make sure the pods for `./macos` are installed
 - `$ npx react-native run-macos` - Run the project normally
 
