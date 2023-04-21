@@ -1,9 +1,3 @@
-# Prebuild
-.expo
-android
-ios
-macos
-
 # OSX
 #
 .DS_Store
