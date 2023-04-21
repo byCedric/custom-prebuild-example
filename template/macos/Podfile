@@ -1,7 +1,7 @@
 require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'CustomPrebuildExample-macOS' do
+target 'HelloWorld-macOS' do
   platform :macos, '10.15'
   use_native_modules!
   use_react_native!(
@@ -13,7 +13,7 @@ target 'CustomPrebuildExample-macOS' do
   # Pods specifically for macOS target
 end
 
-target 'CustomPrebuildExample-iOS' do
+target 'HelloWorld-iOS' do
   platform :ios, '11'
   use_native_modules!
   use_react_native!(:path => '../node_modules/react-native-macos')
