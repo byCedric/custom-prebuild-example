@@ -1,7 +1,25 @@
 {
   "name": "CustomPrebuildExample",
   "displayName": "CustomPrebuildExample",
-  "ios": {
-    "bundleIdentifier": "dev.cedric.customprebuildexample"
+  "expo": {
+    "name": "CustomPrebuildExample",
+    "slug": "custom-prebuild-example",
+    "plugins": [
+      "./plugins/android/without-splashscreen.js",
+      [
+        "./plugins/macos/with-view-size.js",
+        {
+          "width": 800,
+          "height": 600
+        }
+      ],
+      "./plugins/macos/base.js"
+    ],
+    "android": {
+      "package": "dev.cedric.customprebuildexample"
+    },
+    "ios": {
+      "bundleIdentifier": "dev.cedric.customprebuildexample"
+    }
   }
 }

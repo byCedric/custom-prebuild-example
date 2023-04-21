@@ -1,8 +1,8 @@
 # Prebuild
-.expo
-android
-ios
-macos
+/.expo
+/android
+/ios
+/macos
 
 # OSX
 #
