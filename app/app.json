@@ -1,4 +1,7 @@
 {
   "name": "CustomPrebuildExample",
-  "displayName": "CustomPrebuildExample"
+  "displayName": "CustomPrebuildExample",
+  "ios": {
+    "bundleIdentifier": "dev.cedric.customprebuildexample"
+  }
 }

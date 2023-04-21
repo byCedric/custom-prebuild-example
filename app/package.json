@@ -1,5 +1,5 @@
 {
-  "name": "CustomPrebuildExample",
+  "name": "custom-prebuild-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "expo": "^48.0.11",
     "react": "17.0.2",
     "react-native": "0.68.6",
     "react-native-macos": "^0.68.0-0"
