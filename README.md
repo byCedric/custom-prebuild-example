@@ -33,7 +33,7 @@ To get your hands dirty, follow these steps.
 
 After this, you can generate the native files for any of the platforms below.
 All of the platform folders (`./android`, `./ios`, and `./macos`) are gitignored and can be fully regenerated.
-Use `expo prebuild --clean` or `rm -rf ./macos` to regenerate the files.
+Use `... prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 
 ### MacOS
 
