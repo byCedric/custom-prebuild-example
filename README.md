@@ -38,6 +38,7 @@ Use `expo prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 ### MacOS
 
 - `$ cd ./app` - Go to the app folder
+- `$ bundle install` - Install all gems
 - `$ yarn install` - Install all modules, including prebuild
 - `$ expo prebuild --platform macos --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
 - `$ npx pod-install macos` - Make sure the pods for `./macos` are installed
@@ -50,6 +51,7 @@ Use `expo prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 ### Android
 
 - `$ cd ./app` - Go to the app folder
+- `$ bundle install` - Install all gems
 - `$ yarn install` - Install all modules, including prebuild
 - `$ expo prebuild --platform android --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
 - `$ npx react-native run-android` - Run the project normally
@@ -57,6 +59,7 @@ Use `expo prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 ### iOS
 
 - `$ cd ./app` - Go to the app folder
+- `$ bundle install` - Install all gems
 - `$ yarn install` - Install all modules, including prebuild
 - `$ expo prebuild --platform ios --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./ios` folder
 - `$ npx react-native run-ios` - Run the project normally
