@@ -25,7 +25,17 @@
     "metro-react-native-babel-preset": "^0.67.0",
     "react-test-renderer": "17.0.2"
   },
+  "eslintConfig": {
+    "extends": "@react-native-community"
+  },
   "jest": {
     "preset": "react-native"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSameLine": true,
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
