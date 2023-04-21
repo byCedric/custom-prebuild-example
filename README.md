@@ -11,23 +11,57 @@
   <br/>
 </div>
 
+This project demonstrates how Expo Prebuild could be leveraged to run on out-of-tree platforms, with fully customizable templates.
+It's set-up to use prebuild for `android`, `ios`, and `macos`, using the custom template from this repository.
+
 ## 📁 Project Structure
 
-- [`app`](./app) - Example app to run prebuild with any platform
-- [`template`](./template) - The template project used when prebuilding
+- [`app`](./app) - Example app, created using `npx react-native init`
+- [`app/plugins/macos`](./app/plugins/macos) - Registers the `macos` platform with a single modifier
+- [`template`](./template) - A customized prebuild template
 
 ## 🚀 How to use it
 
 To get your hands dirty, follow these steps.
 
-- `$ cd ./app` - The app serves as a playground testing out-of-tree platforms for prebuild
-- `$ yarn install` - Install all modules with yarn
-- `$ yarn expo prebuild --platform foo` - Run prebuild with an out-of-tree platform, defined in the template
+- `$ cd ./template` - Before you can use prebuild, we have to create a template tarball
+- `$ npm pack` - This creates a tarball that we can pass to prebuild
+
+After this, you can generate the native files for any of the platforms below.
+All of the platform folders (`./android`, `./ios`, and `./macos`) are gitignored and can be fully regenerated.
+Use `expo prebuild --clean` or `rm -rf ./macos` to regenerate the files.
+
+### MacOS
+
+- `$ cd ./app` - Go to the app folder
+- `$ yarn install` - Install all modules, including prebuild
+- `$ expo prebuild --platform macos --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
+- `$ npx pod-install macos` - Make sure the pods for `./macos` are installed
+- `$ npx react-native run-macos` - Run the project normally
+
+> **Note**
+> This not only generates the files from the template, it also runs the [`./app/plugins/macos/with-view-size.js`](./app/plugins/macos/with-view-size.js) plugin.
+> Try to customize these window dimensions in [`./app/app.json`](./app/app.json) and let prebuild configure the native files for you.
+
+### Android
+
+- `$ cd ./app` - Go to the app folder
+- `$ yarn install` - Install all modules, including prebuild
+- `$ expo prebuild --platform android --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
+- `$ npx react-native run-android` - Run the project normally
+
+### iOS
+
+- `$ cd ./app` - Go to the app folder
+- `$ yarn install` - Install all modules, including prebuild
+- `$ expo prebuild --platform ios --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./ios` folder
+- `$ npx react-native run-ios` - Run the project normally
 
 ## 👷 How to customize it
 
-Prebuild is designed to execute changes on specific files, using the template as starting state.
-This also works for platforms that are considered "out-of-tree".
+Take a look at the existing prebuild plugins, especially the `macos` part.
+This can be done for any platform, modifier, or change required.
+[Learn more about custom base modifiers](https://docs.expo.dev/config-plugins/development-and-debugging/#custom-base-modifiers)
 
 <div align="center">
   <br />
