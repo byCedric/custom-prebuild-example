@@ -12,7 +12,7 @@
 </div>
 
 This project demonstrates how Expo Prebuild could be leveraged to run on out-of-tree platforms, with fully customizable templates.
-It's set-up to use prebuild for `android`, `ios`, and `macos`, using the custom template from this repository.
+It's set-up to use prebuild for `android`, `ios`, `macos`, and `windows`, using the custom template from this repository.
 
 > **Warning**
 > We recently merged [PR #22224](https://github.com/expo/expo/pull/22224) and [PR #22201](https://github.com/expo/expo/pull/22201), which is required for this demonstration.
@@ -21,7 +21,7 @@ It's set-up to use prebuild for `android`, `ios`, and `macos`, using the custom 
 ## 📁 Project Structure
 
 - [`app`](./app) - Example app, created using `npx react-native init`
-- [`app/plugins/macos`](./app/plugins/macos) - Registers the `macos` platform with a single modifier and plugin
+- [`app/plugins`](./app/plugins) - All plugins required to support out-of-tree platforms
 - [`template`](./template) - A customized prebuild template
 
 ## 🚀 How to use it
@@ -40,18 +40,29 @@ Use `... prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 - `$ cd ./app` - Go to the app folder
 - `$ bundle install` - Install all gems
 - `$ yarn install` - Install all modules, including prebuild
-- `$ npx expo prebuild --platform macos --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
+- `$ npx expo prebuild --platform macos --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./macos` folder
 - `$ npx pod-install macos` - Make sure the pods for `./macos` are installed
 - `$ npx react-native run-macos` - Run the project normally
 
 > **Note**
-> This not only generates the files from the template, it also runs the [`./app/plugins/macos/with-view-size.js`](./app/plugins/macos/with-view-size.js) plugin.
-> Try to customize these window dimensions in [`./app/app.json`](./app/app.json) and let prebuild configure the native files for you.
+> This not only generates the files from the template, it also runs the [`./app/plugins/macos/withWindowSize`](./app/plugins/macos/withWindowSize.js) plugin.
+> Try to customize this in [`./app/app.json`](./app/app.json) and let prebuild configure the native files for you.
+
+### Windows
+
+- `$ cd ./app` - Go to the app folder
+- `$ yarn install` - Install all modules, including prebuild
+- `$ npx expo prebuild --platform windows --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./windows` folder
+- `$ npx react-native run-windows` - Run the project normally
+
+> **Note**
+> This not only generates the files from the template, it also changes settings in `windows/NuGet.Config` and `windows/ExperimentalFeatures.props`.
+> Try to customize this in [`./app/app.json`](./app/app.json) and let prebuild configure the native files for you.
+
 
 ### Android
 
 - `$ cd ./app` - Go to the app folder
-- `$ bundle install` - Install all gems
 - `$ yarn install` - Install all modules, including prebuild
 - `$ npx expo prebuild --platform android --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./android` folder
 - `$ npx react-native run-android` - Run the project normally
