@@ -32,8 +32,8 @@
     "typescript": "4.8.4"
   },
   "resolutions": {
-    "@expo/cli": "file:../vendored/expo-cli-608dafd.tgz",
-    "@expo/config-plugins": "file:../vendored/expo-config-plugins-608dafd.tgz"
+    "@expo/cli": "file:../vendored/expo-cli-670287b.tgz",
+    "@expo/config-plugins": "file:../vendored/expo-config-plugins-670287b.tgz"
   },
   "eslintConfig": {
     "extends": "@react-native-community"

@@ -1203,9 +1203,9 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@expo/cli@0.7.0", "@expo/cli@file:../vendored/expo-cli-608dafd.tgz":
+"@expo/cli@0.7.0", "@expo/cli@file:../vendored/expo-cli-670287b.tgz":
   version "0.6.1"
-  resolved "file:../vendored/expo-cli-608dafd.tgz#92afda1e446a80b2762905703f763d8ba7fa2d06"
+  resolved "file:../vendored/expo-cli-670287b.tgz#6a8f10e575bf00ff799fab358c4e32af6dee5af3"
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/code-signing-certificates" "0.0.5"
@@ -1279,9 +1279,9 @@
     node-forge "^1.2.1"
     nullthrows "^1.1.1"
 
-"@expo/config-plugins@6.0.1", "@expo/config-plugins@file:../vendored/expo-config-plugins-608dafd.tgz", "@expo/config-plugins@~6.0.0":
+"@expo/config-plugins@6.0.1", "@expo/config-plugins@file:../vendored/expo-config-plugins-670287b.tgz", "@expo/config-plugins@~6.0.0":
   version "6.0.0"
-  resolved "file:../vendored/expo-config-plugins-608dafd.tgz#b7e7faacc881454da3d913543945b8843d07061c"
+  resolved "file:../vendored/expo-config-plugins-670287b.tgz#b7e7faacc881454da3d913543945b8843d07061c"
   dependencies:
     "@expo/config-types" "^48.0.0"
     "@expo/json-file" "~8.2.37"
