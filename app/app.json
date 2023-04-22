@@ -4,12 +4,6 @@
   "expo": {
     "name": "CustomPrebuildExample",
     "slug": "custom-prebuild-example",
-    "android": {
-      "package": "dev.cedric.customprebuildexample"
-    },
-    "ios": {
-      "bundleIdentifier": "dev.cedric.customprebuildexample"
-    },
     "plugins": [
       "./plugins/android/withoutExpoSplashScreen",
       [
