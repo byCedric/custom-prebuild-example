@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "macos": "react-native run-macos",
     "windows": "react-native run-windows",
-    "start": "react-native start",
+    "start": "expo start --dev-client",
     "test": "jest",
     "lint": "eslint ."
   },
