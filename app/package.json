@@ -27,8 +27,8 @@
     "react-test-renderer": "17.0.2"
   },
   "resolutions": {
-    "@expo/cli": "file:../vendored/expo-cli-ed94abb.tgz",
-    "@expo/config-plugins": "file:../vendored/expo-config-plugins-ed94abb.tgz"
+    "@expo/cli": "file:../vendored/expo-cli-608dafd.tgz",
+    "@expo/config-plugins": "file:../vendored/expo-config-plugins-608dafd.tgz"
   },
   "eslintConfig": {
     "extends": "@react-native-community"
