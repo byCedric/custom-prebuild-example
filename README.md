@@ -16,7 +16,7 @@ It's set-up to use prebuild for `android`, `ios`, `macos`, and `windows`, using 
 
 > **Warning**
 > We recently merged [PR #22224](https://github.com/expo/expo/pull/22224) and [PR #22201](https://github.com/expo/expo/pull/22201), which is required for this demonstration.
-> Because these pull requests aren't released yet, this repository contains a modified `@expo/cli` and `@expo/config-plugin` versions. (see [./vendored](./vendored))
+> Because these pull requests aren't released yet, this repository contains a modified `@expo/cli` and `@expo/config-plugin` versions. (see [./app/plugins](./app/plugins))
 
 ## 📁 Project Structure
 
