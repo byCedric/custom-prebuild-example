@@ -1,5 +1,6 @@
+const assert = require('assert');
 const {createRunOncePlugin} = require('expo/config-plugins');
-const {withViewController} = require('./base');
+const {withMacOSViewController} = require('./base');
 
 const INSERT_PATTERN = 'NSView *view = [self view];';
 
@@ -7,13 +8,9 @@ const INSERT_PATTERN = 'NSView *view = [self view];';
  * This plugin adds `[view setFrameSize:...]` that should set the initial screen size of a macos app.
  * @type {import('@expo/config-plugins').ConfigPlugin}
  */
-function withViewSize(c, {width = 800, height = 600} = {}) {
-  return withViewController(c, config => {
-    if (config.modResults.language !== 'objc') {
-      throw new Error(
-        'View controller must be Objective-C to use withViewSize.',
-      );
-    }
+function withWindowSize(c, {width = 800, height = 600} = {}) {
+  return withMacOSViewController(c, config => {
+    assert(config.modResults.language === 'objc', 'View controller must be Objective-C to use withViewSize.');
 
     const insertText = `[view setFrameSize:NSMakeSize(${width}, ${height})];`;
 
@@ -26,4 +23,4 @@ function withViewSize(c, {width = 800, height = 600} = {}) {
   });
 }
 
-module.exports = createRunOncePlugin(withViewSize, 'withViewSize', '1.0.0');
+module.exports = createRunOncePlugin(withWindowSize, 'withViewSize', '1.0.0');

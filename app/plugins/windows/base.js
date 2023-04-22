@@ -1,14 +1,14 @@
 const { withMod } = require('expo/config-plugins');
 
-const { createFileResolver, getFileInfo, writeFile } = require('../utils/files');
-const { createPlatformWarning, createPlatformBaseMod, modProvider } = require('../utils/platforms');
-const { parseXml, stringifyXml } = require('../utils/serialization');
+const { createFileResolver, getFileInfo, writeFile } = require('../_utils/files');
+const { createPlatformWarning, createPlatformBaseMod, modProvider } = require('../_utils/platforms');
+const { parseXml, stringifyXml } = require('../_utils/serialization');
 
 /** @typedef {import('@expo/config-plugins').ConfigPlugin<import('@expo/config-plugins').Mod<any>>} ConfigPlugin */
 
 /** Windows specific platform warning aggregator */
 const addWindowsWarning = createPlatformWarning('windows');
-
+/** Windows specific file resolver */
 const getFilePath = createFileResolver({
   ignoredPaths: ['**/(AppPackages|BundleArtifacts)/**'],
   addWarning: addWindowsWarning,

@@ -1,7 +1,7 @@
 const {withAndroidStyles, createRunOncePlugin} = require('expo/config-plugins');
 
 /** Disable the default Android changes in react native apps */
-function withoutSplashScreen(c) {
+function withoutExpoSplashScreen(c) {
   return withAndroidStyles(c, config => {
     // Filter out the default Expo styles
     config.modResults.resources.style =
@@ -27,7 +27,7 @@ function isExpoSplashScreen(style) {
 }
 
 module.exports = createRunOncePlugin(
-  withoutSplashScreen,
-  'withoutSplashScreen',
+  withoutExpoSplashScreen,
+  'withoutExpoSplashScreen',
   '1.0.0',
 );
