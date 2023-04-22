@@ -73,11 +73,12 @@ Use `... prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 - `$ bundle install` - Install all gems
 - `$ yarn install` - Install all modules, including prebuild
 - `$ npx expo prebuild --platform ios --template ../template/custom-prebuild-template-1.0.0.tgz` - Use prebuild to generate the `./ios` folder
+- `$ npx pod-install ios` - Make sure the pods for `./ios` are installed
 - `$ npx react-native run-ios` - Run the project normally
 
 ## 👷 How to customize it
 
-Take a look at the existing prebuild plugins, especially the `macos` part.
+Take a look at the existing prebuild plugins, especially the `macos` or `windows` part.
 This can be done for any platform, modifier, or change required.
 [Learn more about custom base modifiers](https://docs.expo.dev/config-plugins/development-and-debugging/#custom-base-modifiers)
 
