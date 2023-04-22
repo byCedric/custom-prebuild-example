@@ -5,6 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "macos": "react-native run-macos",
+    "windows": "react-native run-windows",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
@@ -29,7 +31,21 @@
     "metro-config": "^0.73.9",
     "typescript": "4.8.4"
   },
+  "resolutions": {
+    "@expo/cli": "file:./plugins/expo-cli-670287b.tgz",
+    "@expo/config-plugins": "file:./plugins/expo-config-plugins-670287b.tgz"
+  },
+  "eslintConfig": {
+    "extends": "@react-native-community"
+  },
   "jest": {
     "preset": "react-native"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSameLine": true,
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

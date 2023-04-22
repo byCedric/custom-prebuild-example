@@ -1,4 +1,34 @@
 {
-  "name": "HelloWorld",
-  "displayName": "HelloWorld"
+  "name": "CustomPrebuildExample",
+  "displayName": "CustomPrebuildExample",
+  "expo": {
+    "name": "CustomPrebuildExample",
+    "slug": "custom-prebuild-example",
+    "plugins": [
+      "./plugins/android/withoutExpoSplashScreen",
+      [
+        "./plugins/macos/withWindowSize",
+        {
+          "width": 800,
+          "height": 600
+        }
+      ],
+      [
+        "./plugins/windows/withExperimentalFeatures",
+        {
+          "useHermes": true
+        }
+      ],
+      [
+        "./plugins/windows/withNuGetSources",
+        {
+          "packageSources": {
+            "Nuget.org": "https://api.nuget.org/v3/index.json"
+          }
+        }
+      ],
+      "./plugins/macos/withMacOS",
+      "./plugins/windows/withWindows"
+    ]
+  }
 }

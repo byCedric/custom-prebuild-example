@@ -1,4 +1,9 @@
-*.tgz
+# Prebuild
+/.expo
+/android
+/ios
+/macos
+/windows
 
 # OSX
 #
