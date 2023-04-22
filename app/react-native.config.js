@@ -14,6 +14,5 @@ module.exports = {
     ios: { sourceDir: './ios' },
     android: { sourceDir: './android' },
     macos: { sourceDir: './macos' },
-    windows: { sourceDir: './windows' },
   },
 };

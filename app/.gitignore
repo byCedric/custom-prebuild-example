@@ -5,6 +5,9 @@
 /macos
 /windows
 
+# Windows
+msbuild.binlog
+
 # OSX
 #
 .DS_Store
