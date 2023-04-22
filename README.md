@@ -32,7 +32,7 @@ To get your hands dirty, follow these steps.
 - `$ npm pack` - This creates a tarball that we can pass to prebuild
 
 After this, you can generate the native files for any of the platforms below.
-All of the platform folders (`./android`, `./ios`, and `./macos`) are gitignored and can be fully regenerated.
+All of the platform folders (`./android`, `./ios`, `./macos`, and `./windows`) are gitignored and can be fully regenerated.
 Use `... prebuild --clean` or `rm -rf ./macos` to regenerate the files.
 
 ### MacOS
