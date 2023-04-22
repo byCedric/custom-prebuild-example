@@ -23,4 +23,4 @@ function withWindowSize(c, {width = 800, height = 600} = {}) {
   });
 }
 
-module.exports = createRunOncePlugin(withWindowSize, 'withViewSize', '1.0.0');
+module.exports = createRunOncePlugin(withWindowSize, 'withWindowSize', '1.0.0');
