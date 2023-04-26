@@ -52,6 +52,11 @@ react {
     // hermesFlags = ["-O", "-output-source-map"]
 }
 
+// Override `hermesEnabled` by `expo.jsEngine`
+ext {
+    hermesEnabled = (findProperty('expo.jsEngine') ?: 'hermes') == 'hermes'
+}
+
 /**
  * Set this to true to create four separate APKs instead of one,
  * one for each native architecture. This is useful if you don't
