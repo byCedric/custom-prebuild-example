@@ -6,17 +6,12 @@
     "slug": "custom-prebuild-example",
     "plugins": [
       "./plugins/android/withoutExpoSplashScreen",
+      "./plugins/universal/withHermes",
       [
         "./plugins/macos/withWindowSize",
         {
           "width": 800,
           "height": 600
-        }
-      ],
-      [
-        "./plugins/windows/withExperimentalFeatures",
-        {
-          "useHermes": true
         }
       ],
       [
