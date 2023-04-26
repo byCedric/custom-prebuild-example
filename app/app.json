@@ -6,7 +6,7 @@
     "slug": "custom-prebuild-example",
     "plugins": [
       "./plugins/android/withoutExpoSplashScreen",
-      "./plugins/universal/withHermes",
+      ["./plugins/universal/withJsEngine.js", { "engine": "hermes" }],
       [
         "./plugins/macos/withWindowSize",
         {
@@ -24,6 +24,12 @@
       ],
       "./plugins/macos/withMacOS",
       "./plugins/windows/withWindows"
-    ]
+    ],
+    "android": {
+      "package": "com.bycedric.customprebuildexample"
+    },
+    "ios": {
+      "bundleIdentifier": "com.bycedric.customprebuildexample"
+    }
   }
 }
