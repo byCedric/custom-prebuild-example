@@ -26,7 +26,7 @@ const withMacOSBaseMod = createPlatformBaseMod('macos', {
       await writeFile(filePath, contents);
     },
   }),
-  podFile: modProvider({
+  podfileProperties: modProvider({
     getFilePath({modRequest: {projectRoot}}) {
       return getFilePath({
         tag: 'podfile-properties',
