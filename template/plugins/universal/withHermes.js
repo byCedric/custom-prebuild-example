@@ -25,12 +25,12 @@ function withHermesAndroid(config) {
     );
 
     if (existing) {
-      existing.value = true;
+      existing.value = 'hermes';
     } else {
       config.modResults.push({
         type: 'property',
         key: 'expo.jsEngine',
-        value: true,
+        value: 'hermes',
       });
     }
 
@@ -40,14 +40,14 @@ function withHermesAndroid(config) {
 
 function withHermesIOS(config) {
   return withPodfileProperties(config, config => {
-    config.modResults['expo.jsEngine'] = true;
+    config.modResults['expo.jsEngine'] = 'hermes';
     return config;
   });
 }
 
 function withHermesMacOS(config) {
   return withMacOSPodfileProperties(config, config => {
-    config.modResults.contents['expo.jsEngine'] = true;
+    config.modResults.contents['expo.jsEngine'] = 'hermes';
     return config;
   });
 }
