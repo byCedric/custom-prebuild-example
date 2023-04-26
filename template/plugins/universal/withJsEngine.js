@@ -52,6 +52,7 @@ function withHermesMacOS(config, { engine } = { engine: 'jsc' }) {
   });
 }
 
+/** Note, Windows uses Chakra instead of JSC */
 function withHermesWindows(config, { engine } = { engine: 'jsc' }) {
   return withWindowsExperimentalFeatures(config, { useHermes: engine === 'hermes' });
 }
