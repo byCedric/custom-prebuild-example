@@ -26,6 +26,25 @@ const withMacOSBaseMod = createPlatformBaseMod('macos', {
       await writeFile(filePath, contents);
     },
   }),
+  podfileProperties: modProvider({
+    getFilePath({modRequest: {projectRoot}}) {
+      return getFilePath({
+        tag: 'podfile-properties',
+        fileName: 'Podfile.properties.json',
+        globPattern: 'macos/**/Podfile.properties.json',
+        projectRoot,
+      });
+    },
+    async read(filePath) {
+      const fileInfo = await getFileInfo(filePath, { '.json': 'json' });
+      fileInfo.contents = fileInfo.contents ? JSON.parse(fileInfo.contents) : {};
+      return fileInfo
+    },
+    async write(filePath, {modResults: {contents}}) {
+      await writeFile(filePath, JSON.stringify(contents, null, 2));
+    },
+
+  }),
 });
 
 /** @type {ConfigPlugin} */
@@ -46,10 +65,20 @@ function withMacOSViewController(config, action) {
   });
 }
 
+/** @type {ConfigPlugin} */
+function withMacOSPodfileProperties(config, action) {
+  return withMod(config, {
+    platform: 'macos',
+    mod: 'podfileProperties',
+    action,
+  });
+}
+
 // Export all macos specific config plugins
 module.exports = {
   addMacOSWarning,
   withMacOSBaseMod,
   withMacOSDangerous,
   withMacOSViewController,
+  withMacOSPodfileProperties,
 };
