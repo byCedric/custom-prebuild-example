@@ -1,8 +1,5 @@
 const { withGradleProperties, withPodfileProperties } = require('expo/config-plugins');
 
-const { withMacOSPodfileProperties } = require('../macos/base');
-const withWindowsExperimentalFeatures = require('../windows/withExperimentalFeatures');
-
 /**
  * Switch JS engines on all supported platforms, including all out-of-tree platforms.
  * Supported property is:
@@ -45,16 +42,30 @@ function withHermesIOS(config, { engine } = { engine: 'jsc' }) {
   });
 }
 
+/** Lazy-plugin, only runs when the macos podfile properties plugin was found. */
 function withHermesMacOS(config, { engine } = { engine: 'jsc' }) {
-  return withMacOSPodfileProperties(config, config => {
-    config.modResults.contents['expo.jsEngine'] = engine;
-    return config;
-  });
+  try {
+    const { withMacOSPodfileProperties } = require('../macos/base');
+    return withMacOSPodfileProperties(config, config => {
+      config.modResults.contents['expo.jsEngine'] = engine;
+      return config;
+    });
+  } catch {
+    return config; // Skip this plugin
+  }
 }
 
-/** Note, Windows uses Chakra instead of JSC */
+/**
+ * Lazy-plugin, only runs when the macos podfile properties plugin was found.
+ * Note, Windows uses Chakra instead of JSC
+ */
 function withHermesWindows(config, { engine } = { engine: 'jsc' }) {
-  return withWindowsExperimentalFeatures(config, { useHermes: engine === 'hermes' });
+  try {
+    const withWindowsExperimentalFeatures = require('../windows/withExperimentalFeatures');
+    return withWindowsExperimentalFeatures(config, { useHermes: engine === 'hermes' });
+  } catch {
+    return config; // Skip this plugin
+  }
 }
 
 module.exports = withJsEngine;
